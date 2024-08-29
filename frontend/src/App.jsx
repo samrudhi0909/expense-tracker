@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignIn from './components/Auth/SignIn'
 import SignUp from './components/Auth/SignUp';
 import Home from './components/Home/Home';
-import logo from './assets/logo.png';
-import ProtectedRoute from './components/Layout/ProtectedRoute';
 
 function App() {
   return (

@@ -6,7 +6,7 @@ node_modules/
 
 # Other sensitive files
 config.js
-secrets.json
+#secrets.json
 
 # Build files
 /build
