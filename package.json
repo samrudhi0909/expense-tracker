@@ -1,7 +1,8 @@
 {
-    "name": "expense-tracker",
-    "version": "1.0.0",
-    "scripts": {
-      "build": "cd frontend && npm install && npm run build && cd ../backend && npm install"
-    }
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "vercel-build": "npm run build"
   }
+}
