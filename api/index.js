@@ -14,11 +14,10 @@ app.use(express.json());
 //app.use(cors());
 //corcs
 app.use(cors({
-  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app',
+  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app', // Update with your frontend's URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-
 // Routes
 app.get('/', (req, res) => {
   res.send('Hello World');
