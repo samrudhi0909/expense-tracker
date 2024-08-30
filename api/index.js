@@ -8,6 +8,13 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+app.options('*', cors()); // Allow preflight requests for all routes
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://expense-tracker-frontend-ashen-seven.vercel.app');
+  console.log('Headers:', res.getHeaders());
+  next();
+});
+
 
 dotenv.config();
 
