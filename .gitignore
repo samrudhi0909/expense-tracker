@@ -5,7 +5,7 @@ node_modules/
 .env
 
 # Other sensitive files
-config.js
+#config.js
 #secrets.json
 
 # Build files
