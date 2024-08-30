@@ -3,6 +3,11 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cors = require('cors');
+app.use(cors({
+  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app', // Update with your frontend's URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 dotenv.config();
 
@@ -11,13 +16,8 @@ connectDB();
 const app = express();
 
 app.use(express.json());
-//app.use(cors());
-//corcs
-app.use(cors({
-  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app', // Update with your frontend's URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+
+
 // Routes
 app.get('/', (req, res) => {
   res.send('Hello World');
