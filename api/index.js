@@ -12,6 +12,12 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+//corcs
+app.use(cors({
+  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 // Routes
 app.get('/', (req, res) => {
