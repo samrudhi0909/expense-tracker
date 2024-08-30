@@ -1,9 +1,11 @@
 {
   "name": "expense-tracker",
   "version": "1.0.0",
- "scripts": {
+  "scripts": {
     "install-frontend": "cd frontend && npm install",
     "install-backend": "cd api && npm install",
-    "build": "npm run install-frontend && npm run install-backend"
+    "build-frontend": "cd frontend && npm run build",
+    "build-backend": "cd api && npm run build",
+    "build": "npm run install-frontend && npm run install-backend && npm run build-frontend && npm run build-backend || exit 1"
   }
 }
