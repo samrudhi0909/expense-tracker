@@ -4,22 +4,28 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cors = require('cors');
 
+// Enable CORS for all routes
 app.use(cors({
-  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app/api', // Update with your frontend's URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
+
 // Add CORS headers to all responses
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://expense-tracker-frontend-ashen-seven.vercel.app/api');
+  res.header('Access-Control-Allow-Origin', 'https://expense-tracker-frontend-ashen-seven.vercel.app');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Credentials', 'true');
   if (req.method === 'OPTIONS') {
     return res.sendStatus(200);
   }
   next();
 });
+
+// Ensure CORS is applied before any route handlers
+app.options('*', cors());
 
 
 
