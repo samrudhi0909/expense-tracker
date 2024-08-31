@@ -12,7 +12,11 @@ const app = express();
 
 // Configure CORS
 const corsOptions = {
-  origin: ['https://expense-tracker-frontend-ashen-seven.vercel.app', 'http://localhost:3000'],
+  origin: [
+    'https://expense-tracker-frontend-ashen-seven.vercel.app',
+    'http://localhost:3000',
+    'http://localhost:5173'  // vite default port
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
