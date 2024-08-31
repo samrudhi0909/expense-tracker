@@ -3,17 +3,25 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cors = require('cors');
+
 app.use(cors({
-  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app', // Update with your frontend's URL
+  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app/api', // Update with your frontend's URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-app.options('*', cors()); // Allow preflight requests for all routes
+// Add CORS headers to all responses
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://expense-tracker-frontend-ashen-seven.vercel.app');
-  console.log('Headers:', res.getHeaders());
+  res.header('Access-Control-Allow-Origin', 'https://expense-tracker-frontend-ashen-seven.vercel.app/api');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Credentials', true);
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
   next();
 });
+
+
 
 
 dotenv.config();
