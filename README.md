@@ -1,6 +1,6 @@
 ### Expense tracker application
 
-### The web app should : 
+### This web app : 
     1. Authenticate user
     2. user signup/signin page
     3. Home page : Net worth + card to add expense/income
