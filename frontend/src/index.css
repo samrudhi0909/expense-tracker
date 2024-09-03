@@ -65,38 +65,12 @@ h1, h2, h3, h4 {
   gap: 20px;
 }
 
-.net-worth {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-top: 100px; /* Adjust this value as needed to move it below the logo */
-}
 
-.add-transaction {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-top: 100px; /* Adjust this value as needed to move it below the logo */
-}
-
-.transaction-history {
-  grid-column: 1 / 3;
-  grid-row: 3 / 4;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
 
 /* Form Styles */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+
 }
 
 label {
@@ -130,7 +104,6 @@ button {
 
 .net-worth-amount {
   font-weight: bold;
-  color: #000000;
   font-size: 2em;
   text-align: center;
   margin: 20px 0;

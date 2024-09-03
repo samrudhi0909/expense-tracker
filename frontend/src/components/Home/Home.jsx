@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import AddTransaction from './AddTransaction';
 import TransactionHistory from './TransactionHistory';
 import { API_URL } from '../../config';
-import logo from '../../assets/logo.png'; // Assuming the logo is in the assets folder
+import './Home.css'; 
 
 function Home() {
   const [netWorth, setNetWorth] = useState(0);
-  const[userName, setUserName] = useState('');
+  const [userName, setUserName] = useState('');
 
   useEffect(() => {
     fetchNetWorth();
@@ -25,10 +25,10 @@ function Home() {
           'Authorization': `Bearer ${token}`
         }
       });
-     
+
       const data = await response.json();
       const userData = await userinfo.json();
-    
+
       if (response.ok && userinfo.ok) {
         setNetWorth(data.netWorth);
         setUserName(userData.name);
@@ -39,21 +39,21 @@ function Home() {
       userinfo.ok === false ? console.error('Error fetching net worth', error) : console.error('Error fetching user info', error);
     }
   };
+
   const handleTransactionAdded = (amount, type) => {
     setNetWorth(prevNetWorth => {
-      const newNetWorth = type === 'income' 
-        ? prevNetWorth + amount 
+      const newNetWorth = type === 'income'
+        ? prevNetWorth + amount
         : prevNetWorth - amount;
       return parseFloat(newNetWorth.toFixed(2));
     });
   };
-  
-  
+
   return (
     <div className="container home-grid">
-      <div style={{ position: 'absolute', top: '20px', left: '50%', transform: 'translateX(-50%)' }}>
-        <h1>Moolah</h1>
-        <h6 className="tagline">Track Your Cash, Grow Your Stash!</h6>
+      <div className="header">
+        <h1 className="app-title">Moolah</h1>
+        <h6 className="tagline">Track that Money!</h6>
       </div>
       <div className="net-worth">
         <h1>Welcome, {userName}!</h1>
@@ -69,7 +69,6 @@ function Home() {
       </div>
     </div>
   );
-
 }
 
 export default Home;

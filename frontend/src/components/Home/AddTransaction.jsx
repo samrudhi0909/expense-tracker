@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { API_URL } from '../../config';
 
-function AddTransaction({ onTransactionAdded }) {  // Receive the prop here
+function AddTransaction({ onTransactionAdded }) {  
   const [amount, setAmount] = useState('');
   const [type, setType] = useState('');
   const [tag, setTag] = useState('');
@@ -59,12 +59,12 @@ function AddTransaction({ onTransactionAdded }) {  // Receive the prop here
   };
   return (
     <div>
-      <h3>Add Transaction</h3>
+      <h2 style={{ color: '#14FFEC' }}>Add Transaction</h2>
       {error && <p className="error-message">{error}</p>}
       {success && <p className="success-message">{success}</p>}
       <form onSubmit={handleAddTransaction}>
         <div className="form-group">
-          <label htmlFor="amount">Amount: <span style={{ color: 'red' }}>*</span></label>
+          <label htmlFor="amount" style={{ fontWeight: 'bold', fontSize: '1.2em'}}>Amount: <span style={{ color: 'red' }}>*</span></label>
           <input
             id="amount"
             type="number"
@@ -74,26 +74,28 @@ function AddTransaction({ onTransactionAdded }) {  // Receive the prop here
           />
         </div>
         <div className="form-group">
-          <label htmlFor="type">Type: <span style={{ color: 'red' }}>*</span></label>
+          <label htmlFor="type" style={{ fontWeight: 'bold', fontSize: '1.2em'}}>Type: <span style={{ color: 'red' }}>*</span></label>
           <select
             id="type"
             value={type}
             onChange={(e) => setType(e.target.value)}
           >
+            <option value="">Select Type</option>
             <option value="income">Income</option>
             <option value="spending">Expense</option>
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="tag">Tag (optional):</label>
+          <label htmlFor="tag" style={{ fontWeight: 'bold', fontSize: '1.2em'}}>Tag (optional):</label>
           <input
             id="tag"
             type="text"
             value={tag}
             onChange={(e) => setTag(e.target.value)}
+  
           />
         </div>
-        <button type="submit">Add</button>
+        <button type="submit" style={{ marginTop: '5px' }}>Add</button>
       </form>
     </div>
   );
