@@ -1,6 +1,6 @@
 ### Expense tracker application
-#####Moolah####
-### This web app : 
+### Moolah 
+This web app : 
     1. Authenticates user
     2. User can either signin or signup if first time.
     3. Has a Home page that displays : Net worth of the user based on the transactions saved in this app. 
