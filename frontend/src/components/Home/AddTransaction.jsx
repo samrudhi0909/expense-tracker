@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { API_URL } from '../../config';
+import { API_ENDPOINT } from '../../config';
+const API_URL = `${API_ENDPOINT}api`;
 
 function AddTransaction({ onTransactionAdded }) {  
   const [amount, setAmount] = useState('');

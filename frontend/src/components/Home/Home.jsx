@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import AddTransaction from './AddTransaction';
 import TransactionHistory from './TransactionHistory';
-import { API_URL } from '../../config';
+import { API_ENDPOINT } from '../../config';
+const API_URL = `${API_ENDPOINT}api`;
 import './Home.css'; 
 
 function Home() {

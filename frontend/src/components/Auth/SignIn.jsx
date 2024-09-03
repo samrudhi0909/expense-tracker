@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { API_URL } from '../../config';
+import { API_ENDPOINT } from '../../config';
+const API_URL = `${API_ENDPOINT}api`;
 import './SignIn.css'; // Create this CSS file for custom styling
 
 function SignIn() {
