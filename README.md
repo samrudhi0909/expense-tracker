@@ -1,4 +1,4 @@
-### Moolah is a full-stack web application designed for tracking personal finances. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js), Moolah allows users to manage their income and expenses efficiently. 
+### Moolah 
 
 ### Key Features
 1. User Authentication: Secure sign-up and login functionality using JWT (JSON Web Tokens) for user sessions.
