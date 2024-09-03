@@ -10,13 +10,16 @@ const app = express();
 
 // Enable CORS for all routes
 app.use(cors({
-  origin: '*',
+  origin: 'https://expense-tracker-frontend-ashen-seven.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
 
+
 app.use(express.json());
+// Preflight request handler for /api/auth/signin
+app.options('/api/auth/signin', cors());
 
 // Routes
 app.get('/', (req, res) => {
