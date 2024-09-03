@@ -1,5 +1,5 @@
 ### Expense tracker application
-
+#####Moolah####
 ### This web app : 
     1. Authenticates user
     2. User can either signin or signup if first time.
